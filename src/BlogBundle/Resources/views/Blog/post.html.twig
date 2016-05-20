@@ -1,0 +1,14 @@
+Blog post | <a href="{{ url('blog_index') }}">BACK TO INDEX</a>
+<br/>
+Blog post title: {{ post.title }}
+<br/>
+Blog post category:
+{% if post.category %}
+<a href="{{ url('blog_category', {'category': post.category.name}) }}">{{ post.category.name }}<a/>
+{% else %}
+no category
+{% endif %}
+<br/>
+Blog post created at {{ post.createdAt | date('Y-m-d H:i:s') }}
+<br/>
+Blog post content: {{ post.content }}

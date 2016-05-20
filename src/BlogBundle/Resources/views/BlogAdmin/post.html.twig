@@ -1,0 +1,9 @@
+Blog admin post
+<br/>
+Post title: {{ post.title }}
+<br/>
+Post content: {{ post.content }}
+<br/>
+Post category: <a href="{{ url('blog_admin_category', {'': post.category.name}) }}">{{ post.category.name }}</a>
+<br/>
+Post created at: {{ post.createdAt | date('Y-m-d H:i:s') }}

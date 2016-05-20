@@ -1,0 +1,18 @@
+Blog admin post edit | <a href="{{ url('blog_admin') }}">BACK TO ADMIN INDEX</a>
+<br/>
+Post title: {{ post.title }}
+<br/>
+Post content: {{ post.content }}
+<br/>
+Post category:
+{% if post.category %}
+<a href="{{ url('blog_admin_category', {'category_name': post.category.name}) }}">{{ post.category.name }}</a>
+{% else %}
+no category
+{% endif %}
+<br/>
+Post created at: {{ post.createdAt | date('Y-m-d H:i:s') }}
+<br/>
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}

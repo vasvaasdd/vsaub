@@ -1,0 +1,16 @@
+Admin blog page | <a href="{{ url('blog_index') }}">BACK TO INDEX</a> | <a href="{{ url('blog_admin') }}">BACK TO ADMIN INDEX</a>
+<br/>
+<a href="{{ url('blog_admin_posts') }}">Blog posts</a> | <a href="{{ url('blog_admin_post_add') }}">ADD POST</a>
+<ul>
+  {% for post in posts %}
+  <li>
+    <a href="{{ url('blog_admin_post', {'post_title': post.title}) }}">{{ post.title }}<a/> | <a href="{{ url('blog_admin_post', {'post_title': post.title, 'action': 'edit'}) }}">EDIT<a/> | <a href="{{ url('blog_admin_post', {'post_title': post.title, 'action': 'delete'}) }}">DELETE<a/></li>
+  {% endfor %}
+</ul>
+<a href="{{ url('blog_admin_categories') }}">Blog categories</a> | <a href="{{ url('blog_admin_category_add') }}">ADD CATEGORY</a>
+<ul>
+  {% for category in categories %}
+  <li><a href="{{ url('blog_admin_category', {'category_name': category.name}) }}">{{ category.name }}<a/> | <a href="{{ url('blog_admin_category', {'category_name': category.name, 'action': 'edit'}) }}">EDIT<a/> | <a href="{{ url('blog_admin_category', {'category_name': category.name, 'action': 'delete'}) }}">DELETE<a/></li>
+  </li>
+  {% endfor %}
+</ul>

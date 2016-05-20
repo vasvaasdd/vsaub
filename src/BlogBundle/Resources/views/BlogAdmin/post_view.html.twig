@@ -1,0 +1,14 @@
+Blog admin post view | <a href="{{ url('blog_admin') }}">BACK TO ADMIN INDEX</a>
+<br/>
+Post title: {{ post.title }} | <a href="{{ url('blog_admin_post', {'post_title': post.title, 'action': 'edit'}) }}">EDIT<a/> | <a href="{{ url('blog_admin_post', {'post_title': post.title, 'action': 'delete'}) }}">DELETE<a/>
+<br/>
+Post content: {{ post.content }}
+<br/>
+Post category:
+{% if post.category %}
+<a href="{{ url('blog_admin_category', {'category_name': post.category.name}) }}">{{ post.category.name }}</a>
+{% else %}
+no category
+{% endif %}
+<br/>
+Post created at: {{ post.createdAt | date('Y-m-d H:i:s') }}

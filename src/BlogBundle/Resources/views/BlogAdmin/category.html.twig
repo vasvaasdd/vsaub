@@ -1,0 +1,10 @@
+Blog category admin
+<br/>
+Category name: {{ category.name }}
+<br/>
+Posts in category: {{ posts|length }}
+<ul>
+{% for post in posts %}
+<li><a href="{{ url('blog_admin_post', {'post_title': post.title}) }}">{{ post.title }}<a/></li>
+{% endfor %}
+</ul>
